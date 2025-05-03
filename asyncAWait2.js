@@ -12,3 +12,21 @@ async function handleAsync() {
 }
 
 handleAsync();
+
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log("Fetched Data:", data);
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+// Example usage
+const apiUrl = "https://jsonplaceholder.typicode.com/posts/1";
+fetchData(apiUrl);
