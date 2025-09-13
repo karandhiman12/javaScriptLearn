@@ -1,5 +1,5 @@
 // Node class to represent individual elements in the linked list
-class Node{
+class Node {
     constructor(data) {
         this.data = data;
         this.next = null;
@@ -7,7 +7,7 @@ class Node{
 }
 
 // LinkedList class with various operations
-class LinkedList{
+class LinkedList {
     constructor() {
         this.head = null;
         this.size = 0;
