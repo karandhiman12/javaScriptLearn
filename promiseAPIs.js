@@ -1,3 +1,5 @@
+//Promises in JavaScript
+
 const p1 = new Promise((resolve, reject) => {
     setTimeout(() => resolve("P1 successful."), 3000);
 });
