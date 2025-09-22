@@ -1,10 +1,3 @@
-// ================================
-// BREADTH-FIRST SEARCH (BFS) IMPLEMENTATIONS
-// ================================
-
-// 1. GRAPH BFS IMPLEMENTATION
-// ================================
-
 class Graph {
     constructor() {
         this.adjacencyList = {};
