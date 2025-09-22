@@ -42,4 +42,3 @@ const obj = {
 obj.x(); 
 // Arrow functions do not have their own `this` binding.
 // Instead, they inherit `this` from their surrounding lexical scope (global in this case).
-// In strict mode, "this" remains `undefined` if executed in the global context.
