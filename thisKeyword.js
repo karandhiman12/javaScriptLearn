@@ -1,4 +1,4 @@
-"use strict"; // Enables strict mode to prevent accidental errors
+"use strict"; 
 
 // "this" in global space
 console.log(this); 
