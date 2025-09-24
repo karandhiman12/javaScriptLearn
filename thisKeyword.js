@@ -1,6 +1,5 @@
 "use strict"; 
 
-// "this" in global space
 console.log(this); 
 // In non-strict mode, "this" refers to the global object (window in browsers).
 // In strict mode, "this" is undefined in the global context.
