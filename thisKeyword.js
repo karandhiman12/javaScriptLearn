@@ -38,6 +38,4 @@ const obj = {
     }
 };
 
-obj.x(); 
-// Arrow functions do not have their own `this` binding.
-// Instead, they inherit `this` from their surrounding lexical scope (global in this case).
+obj.x();
