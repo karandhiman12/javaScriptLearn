@@ -353,56 +353,6 @@ function wordLadder(beginWord, endWord, wordList) {
     return 0; // No transformation possible
 }
 
-
-
-// Shortest Bridge Problem - Connect two islands
-function shortestBridge(grid) {
-    const n = grid.length;
-    const queue = [];
-    let found = false;
-    
-    // Find first island and mark it
-    for (let i = 0; i < n && !found; i++) {
-        for (let j = 0; j < n && !found; j++) {
-            if (grid[i][j] === 1) {
-                markIsland(grid, i, j, queue);
-                found = true;
-            }
-        }
-    }
-    
-    // BFS to find shortest bridge to second island
-    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
-    let steps = 0;
-    
-    while (queue.length > 0) {
-        const size = queue.length;
-        
-        for (let i = 0; i < size; i++) {
-            const [row, col] = queue.shift();
-            
-            directions.forEach(([dr, dc]) => {
-                const newRow = row + dr;
-                const newCol = col + dc;
-                
-                if (isValidCell(newRow, newCol, n, n)) {
-                    if (grid[newRow][newCol] === 1) {
-                        return steps; // Found second island
-                    }
-                    if (grid[newRow][newCol] === 0) {
-                        grid[newRow][newCol] = 2; // Mark as visited
-                        queue.push([newRow, newCol]);
-                    }
-                }
-            });
-        }
-        
-        steps++;
-    }
-    
-    return -1;
-}
-
 function markIsland(grid, row, col, queue) {
     if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || 
         grid[row][col] !== 1) {
