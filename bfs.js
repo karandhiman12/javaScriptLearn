@@ -134,49 +134,6 @@ class Graph {
 // 2. GRID/MATRIX BFS IMPLEMENTATION
 // ================================
 
-// BFS for pathfinding in a 2D grid
-function gridBFS(grid, start, end) {
-    const rows = grid.length;
-    const cols = grid[0].length;
-    const visited = Array(rows).fill().map(() => Array(cols).fill(false));
-    const queue = [[start[0], start[1], 0]]; // [row, col, distance]
-    const parent = Array(rows).fill().map(() => Array(cols).fill(null));
-    
-    // 4-directional movement
-    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
-    
-    visited[start[0]][start[1]] = true;
-    
-    while (queue.length > 0) {
-        const [row, col, dist] = queue.shift();
-        
-        // Reached destination
-        if (row === end[0] && col === end[1]) {
-            return {
-                distance: dist,
-                path: reconstructPath(parent, start, end)
-            };
-        }
-        
-        // Explore all 4 directions
-        directions.forEach(([dr, dc]) => {
-            const newRow = row + dr;
-            const newCol = col + dc;
-            
-            if (isValidCell(newRow, newCol, rows, cols) && 
-                !visited[newRow][newCol] && 
-                grid[newRow][newCol] === 0) {
-                
-                visited[newRow][newCol] = true;
-                parent[newRow][newCol] = [row, col];
-                queue.push([newRow, newCol, dist + 1]);
-            }
-        });
-    }
-    
-    return { distance: -1, path: null }; // No path found
-}
-
 // BFS for 8-directional movement (including diagonals)
 function gridBFS8Directions(grid, start, end) {
     const rows = grid.length;
