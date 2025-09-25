@@ -353,49 +353,7 @@ function wordLadder(beginWord, endWord, wordList) {
     return 0; // No transformation possible
 }
 
-// Rotting Oranges Problem
-function rottingOranges(grid) {
-    const rows = grid.length;
-    const cols = grid[0].length;
-    const queue = [];
-    let freshOranges = 0;
-    
-    // Find all initially rotten oranges and count fresh ones
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            if (grid[i][j] === 2) {
-                queue.push([i, j, 0]); // [row, col, time]
-            } else if (grid[i][j] === 1) {
-                freshOranges++;
-            }
-        }
-    }
-    
-    if (freshOranges === 0) return 0;
-    
-    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
-    let maxTime = 0;
-    
-    while (queue.length > 0) {
-        const [row, col, time] = queue.shift();
-        maxTime = Math.max(maxTime, time);
-        
-        directions.forEach(([dr, dc]) => {
-            const newRow = row + dr;
-            const newCol = col + dc;
-            
-            if (isValidCell(newRow, newCol, rows, cols) && 
-                grid[newRow][newCol] === 1) {
-                
-                grid[newRow][newCol] = 2; // Make it rotten
-                freshOranges--;
-                queue.push([newRow, newCol, time + 1]);
-            }
-        });
-    }
-    
-    return freshOranges === 0 ? maxTime : -1;
-}
+
 
 // Shortest Bridge Problem - Connect two islands
 function shortestBridge(grid) {
