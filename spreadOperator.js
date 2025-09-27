@@ -1,3 +1,4 @@
+//spread operator in js
 "use strict";
 
 // Sample product database
