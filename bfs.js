@@ -1,5 +1,3 @@
-// Breadth-First Search (BFS) Implementation in Node.js
-
 // 1. BFS for Graph Traversal
 class Graph {
     constructor() {
