@@ -1,7 +1,6 @@
 function insertionSort(arr) {
     const n = arr.length;
     
-    // Start from the second element (index 1)
     for (let i = 1; i < n; i++) {
         let key = arr[i]; // Current element to be inserted
         let j = i - 1;    // Index of the last element in sorted portion
