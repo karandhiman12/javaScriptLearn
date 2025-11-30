@@ -1,3 +1,5 @@
+//se;ection sort in javascript
+
 function selectionSort(arr) {
     const n = arr.length;
     
