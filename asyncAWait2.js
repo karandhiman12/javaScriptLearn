@@ -1,3 +1,5 @@
+//async and await in js
+
 const API_URL = "https://jsonplaceholder.typicode.com/todos/1";
 
 async function handleAsync() {
